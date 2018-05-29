@@ -815,6 +815,44 @@
                 }
             }
         },
+        "/array/prim/enum": {
+          "get": {
+            "operationId": "array_putEnum",
+            "description": "Put the enum array value ['red color' 'green-color' 'blue_color']",
+            "tags": [
+              "Array Operations"
+            ],
+            "parameters": [
+              {
+                "collectionFormat": "multi",
+                "in": "query",
+                "items": {
+                  "enum": [
+                    "enum1",
+                    "enum2",
+                    "enum3",
+                    "enum4"
+                  ],
+                  "type": "string"
+                },
+                "name": "items",
+                "required": false,
+                "type": "array"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "The array value ['red color' 'green-color' 'blue_color']"
+              },
+              "default": {
+                "description": "Unexpected error",
+                "schema": {
+                  "$ref": "#/definitions/Error"
+                }
+              }
+            }
+          }
+        },
         "/array/prim/uuid/valid": {
             "get": {
                 "operationId": "array_getUuidValid",
@@ -903,7 +941,7 @@
                     }
                 }
             }
-        }, 
+        },
         "/array/prim/date/valid": {
             "get": {
                 "operationId": "array_getDateValid",

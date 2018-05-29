@@ -1668,6 +1668,69 @@
         }
       }
     },
+    "/list-enum": {
+      "get": {
+        "consumes": [],
+        "operationId": "List-enumGet",
+        "parameters": [
+          {
+            "collectionFormat": "multi",
+            "in": "query",
+            "items": {
+              "enum": [
+                "enum1",
+                "enum2",
+                "enum3",
+                "enum4"
+              ],
+              "type": "string",
+              "x-ms-enum": { "name": "ExtractorType" }
+            },
+            "name": "someitems",
+            "required": true,
+            "type": "array"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "QueryString"
+        ]
+      }
+    },
+    "/single-enum": {
+      "get": {
+        "consumes": [],
+        "operationId": "Single-enumGet",
+        "parameters": [
+          {
+            "enum": [
+              "enum1",
+              "enum2",
+              "enum3",
+              "enum4"
+            ],
+            "in": "query",
+            "name": "derpitem",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "QueryString"
+        ]
+      }
+    },
     "/queries/array/csv/string/null": {
       "get": {
         "operationId": "queries_ArrayStringCsvNull",

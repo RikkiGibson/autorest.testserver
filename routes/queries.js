@@ -192,6 +192,13 @@ var queries = function (coverage) {
     }
   });
 
+  router.get('/array/csv/enum/valid', function (req, res, next) {
+    var type = req.params.type;
+    var scenario = req.params.scenario;
+    var format = req.params.format;
+    console.log(req.query["arrayQuery"]);
+  });
+
   router.get('/:type/:scenario', function (req, res, next) {
     var type = req.params.type;
     var scenario = req.params.scenario;
